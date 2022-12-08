@@ -144,11 +144,11 @@ void citire(FILE *inputFile, int N, struct masina *mas, char *cerinta){
         strncpy(mas[i].combustibil, buf, strlen(buf)*sizeof(char));
         mas[i].combustibil[strlen(buf)*sizeof(char)] = '\0';
 
-        fscanf(inputFile, "%s", buf);
+        fscanf(inputFile, "%20s", buf);
         consum = strtof(buf, NULL);
         memcpy(&(mas+i)->consum, &consum, sizeof(consum));
 
-        fscanf(inputFile, "%s", buf);
+        fscanf(inputFile, "%20s", buf);
         km = strtol(buf, NULL, 10);
         memcpy(&(mas+i)->km, &km, sizeof(km));
     }
